@@ -9,7 +9,7 @@ class Solution {
             //better than sorting and picking as that might be risky for out of radius
             //Thus, we need - (circle_center_x - x1) ^ 2 - (circle_center_y - y1) ^ 2 <= r * r for a point to be inside the circle.
         
-        int count=0;
+        //int count=0;
         int res[]=new int[queries.length];
         
         for(int i=0;i<queries.length;i++)
@@ -18,10 +18,9 @@ class Solution {
             for(int j=0;j<points.length;j++)
             {
                 if((x-points[j][0])*(x-points[j][0])+(y-points[j][1])*(y-points[j][1])<=(r*r))
-                    count++;
+                    res[i]++;
             }
-            res[i]=count;
-            count=0;
+            
         }
         return res;
     }
