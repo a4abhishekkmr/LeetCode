@@ -5,7 +5,7 @@ class Solution {
         int ans[]=new int[nums.length];
         
         int pivot_count=0;
-        int small=0,large=nums.length-1;
+        int small=0;
         for(int i=0;i<nums.length;i++)
         {
             if(nums[i]<pivot)
