@@ -9,21 +9,46 @@ class Solution {
         
         String ans="";
         
-        int count=0;
-        int covered=0;
+//         int count=0;
+//         int covered=0;
+//         for(int i=0;i<s.length();i++)
+//         {
+//             char ch=s.charAt(i);
+//             if(ch=='(') count--;
+//             else count++;
+            
+//             if(count==0 && i!=0)
+//             {
+//                 ans+=s.substring(covered+1,i);
+//                 covered=i+1;
+//             }
+//         }
+//         return ans;
+        
+        
+        //2nd Method
+        //Using Stack
+        
+        Stack<Character> st=new Stack<>();
+        
         for(int i=0;i<s.length();i++)
         {
             char ch=s.charAt(i);
-            if(ch=='(') count--;
-            else count++;
             
-            if(count==0 && i!=0)
+            if(ch=='(')
             {
-                ans+=s.substring(covered+1,i);
-                covered=i+1;
+                if(st.size()>0)
+                    ans+=ch;
+                
+                st.push(ch);
             }
+            else
+            {
+                st.pop();
+                if(!st.isEmpty())
+                    ans+=ch;
+            }//empty when break
         }
         return ans;
-        
     }
 }
