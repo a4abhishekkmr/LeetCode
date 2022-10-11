@@ -20,3 +20,4 @@ class Solution {
         return steps;
     }
 }
+//One good solution in C++ in Desi Style:- https://leetcode.com/problems/watering-plants/discuss/2673930/Line-By-Line-explained-%22C%2B%2B-Solution%22-Desi-Style
