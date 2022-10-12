@@ -1,0 +1,25 @@
+class Solution {
+    public boolean increasingTriplet(int[] nums) {
+        //we can do blindly by o(n^3) but we not need that
+        //we need to use some logic to solve this efficienly
+        
+//         Intuition :
+
+// We need to check if any strictly increasing sequence of size 3 present in the array.
+// For this, we can keep iterating the given array from left to right, and changing our FirstMinimumValue and SecondMinimumValue.
+// If any number comes, which is greater than SecondMinimumValue then this shows that, we have found a triplet with increasing subsequence. => return true.
+// If after whole iteration, above statement is not returning any answer, then this shows no increasing triplet present in the array. => return false at the end.
+        
+        //code
+        //change kro 2 min values ko ni kia to triplet pakda jaega
+        int min1=Integer.MAX_VALUE,min2=Integer.MAX_VALUE;
+        
+        for(int x:nums)
+        {
+            if(x<=min1) min1=x;
+            else if(x<=min2) min2=x;
+            else return true;
+        }
+        return false;
+    }
+}
