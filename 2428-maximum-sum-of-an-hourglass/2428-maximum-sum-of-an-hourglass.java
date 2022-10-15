@@ -9,7 +9,12 @@ class Solution {
         for(int i=1;i<n-1;i++)
         {
             for(int j=1;j<m-1;j++)
-                maxsum=Math.max(maxsum,find(grid,i,j));
+            {
+                int cal=find(grid,i,j);
+                if(cal>maxsum)
+                    maxsum=cal;
+            }
+                
         }
         return maxsum;
     }
