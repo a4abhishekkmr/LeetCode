@@ -1,10 +1,6 @@
 class Solution {
     public String freqAlphabets(String s) {
-        //lets run from back side and if we fetch # then conider for the prev 2 chars and count;
-            //i am thinking of taking Stringbuffer which will helps to not to reverse the string formed it will already be in reverse.
-            
-            
-            StringBuffer sb=new StringBuffer();
+         StringBuffer sb=new StringBuffer();
             int n=s.length();
             int pos=n-1;
             while(pos>=0)
