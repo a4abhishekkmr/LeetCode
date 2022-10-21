@@ -38,7 +38,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | 1672 | richest-customer-wealth                                 | https://leetcode.com/problems/richest-customer-wealth/                                 |
 | 2278 | Percent of letter in a String                           | https://leetcode.com/problems/percentage-of-letter-in-string/                          |
 
-This repository consists of all leetcode solutions keep contributing to this project
+This repository consists of all leetcode solutions solved by me, to add more keep contributing to this project
 
 Leetcode Questions link:
 
