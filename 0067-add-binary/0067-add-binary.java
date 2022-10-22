@@ -29,10 +29,9 @@ class Solution {
             sb.append(temp%2);
             carry=temp/2;
         }
-        while(carry>0)
+        if(carry>0)
         {
             sb.append(carry%2);
-            carry=carry/2;
         }
         return sb.reverse().toString();
     }
