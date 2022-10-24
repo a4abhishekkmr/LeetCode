@@ -16,12 +16,12 @@ class Solution {
         String Reverse(String str)
         {
                 int n=str.length();
-                String ans="";
-                if(n==0) return ans;
+                StringBuilder ans=new StringBuilder();
+                if(n==0) return ans.toString();
                 for(int i=n-1;i>=0;i--)
                 {
-                        ans+=str.charAt(i);
+                        ans.append(String.valueOf(str.charAt(i)));
                 }
-                return ans;
+                return ans.toString();
         }
 }
