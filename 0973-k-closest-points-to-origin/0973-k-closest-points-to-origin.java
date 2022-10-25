@@ -15,7 +15,7 @@ class Solution {
             int []point=points[i];
             int a=point[0];
             int b=point[1];
-            double square=helper(a,b);
+            double square=Math.sqrt(a*a+b*b);
 
         List<Integer> al=map.getOrDefault(square,new ArrayList<>());
             al.add(i);
@@ -50,18 +50,6 @@ class Solution {
         }
         return ans;
         
-    }
-    
-    private double helper(int x1,int y1)
-    {
-        //int x1=Math.abs(x-0);
-        //int y1=Math.abs(y-0);
-        
-        x1*=x1;
-        y1*=y1;
-        
-        double ans=Math.sqrt(x1+y1);
-        return ans;
     }
 }
 
