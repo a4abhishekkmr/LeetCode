@@ -13,6 +13,8 @@ class Solution {
         
         if(head==null) return head;
         if(val==0) return head;
+        if(head.next==null && head.val==val)
+            return null;
         //corner cases covered
         
         while(head!=null && head.val==val)
