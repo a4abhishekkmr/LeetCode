@@ -25,7 +25,7 @@ class Solution {
         int i=0;
         while(i<len-n)
         {
-            //remove i and add i+len-1  dur to 0 based index i have to add 2th index for 0+2-1;
+            //remove i and add i+len-1  dur to 0 based index i have to add 2th index for (1)+2-1;//badh gya hai i 1 se
             window[s2.charAt(i++)-'a']--;
             window[s2.charAt(i+n-1)-'a']++;
             //check
@@ -35,3 +35,23 @@ class Solution {
         return false;
     }
 }
+
+/* ANother GOod Solution
+
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        int[] arr = new int[26];
+        for(char c : s1.toCharArray()) arr[c - 'a']++;
+        int j = 0, i = 0;
+        int count= s1.length();
+        while(j < s2.length()){
+            if(arr[s2.charAt(j++) - 'a']-- > 0)
+                count--;
+            if(count == 0) return true;
+            if(j - i == s1.length() && arr[s2.charAt(i++) - 'a']++ >= 0)
+                count++;
+        }
+        return false;
+    }
+}
+*/
