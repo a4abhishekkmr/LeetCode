@@ -26,3 +26,20 @@ class Solution {
         return false;
     }
 }
+//taking example of this
+/*
+[23,2,4,6,7]
+6
+
+now we have 0,-1 in Hashmap
+
+for i=0; sum=23 then sum=23%6=5;
+now hm not contains so hm=((0,-1),(5,0));
+
+for i=1; sum=5+2=7 sum=7%6=1  now again hm not contains so finally hm=((0,-1),(5,0),(1,0));
+
+for i=2; sum=1+4=5 sum=5%6=5; but this time hm contains 5 and we can also see 2 and 4 makes sum=6
+    so it contains and hm.get(5)==0 and i-0=> 2-0 which is >=2 so we will retur true;
+
+hope this is clear.
+*/
