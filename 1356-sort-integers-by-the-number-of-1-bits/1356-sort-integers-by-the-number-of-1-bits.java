@@ -4,14 +4,14 @@ class Solution {
         
         for(int i=0;i<arr.length;i++)
         {
-            arr[i]+=Integer.bitCount(arr[i])*500001;
+            arr[i]+=Integer.bitCount(arr[i])*50002;
         }
         
         Arrays.sort(arr);
         
         for(int i=0;i<arr.length;i++)
         {
-            arr[i]=arr[i]%500001;
+            arr[i]=arr[i]%50002;
         }
         return arr;
     }
