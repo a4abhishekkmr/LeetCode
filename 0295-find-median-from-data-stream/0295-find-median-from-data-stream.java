@@ -6,15 +6,15 @@ class MedianFinder {
     }
     
     public void addNum(int num) {
-        int flag=0;
+        boolean added=false;
         for(int i=0;i<al.size();i++){
             if(al.get(i)>=num){
                 al.add(i,num);
-                flag=1;
+                added=true;
                 break;
             }
         }
-        if(flag==0)
+        if(added==false)
             al.add(num);
     }
     
