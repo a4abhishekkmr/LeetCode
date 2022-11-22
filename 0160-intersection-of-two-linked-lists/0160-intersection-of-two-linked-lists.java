@@ -9,6 +9,9 @@
  *     }
  * }
  */
+
+// Hash list 1 and iterate list 2 and check for node equality.
+  //  T(C)-> O(n+m) S(c)-> O(n);
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         
@@ -30,3 +33,5 @@ public class Solution {
         return null;
     }
 }
+//Master Solution
+//https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/2839085/4-Approaches-in-Javaoror-O(n*m)-or-O(n%2Bm)-with-hashmap-or-O(n%2Bm)-with-O(1)-space
