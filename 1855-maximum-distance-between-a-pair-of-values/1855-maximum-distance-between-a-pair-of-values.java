@@ -16,6 +16,13 @@ class Solution {
         }
         return dist;*/
         
+        
+        //Ok so what i will do is for every i in num1 using for loop i will start finding the element in nums2 which is lesser and the most farest from i; and for seaeching i will use binary Search by comparing form current i as start and end as the m elements of nums2.
+		//now in the binary search if mid<nums1[i] then start ko mid se aage
+		//else end ko mid se peeche, the concept behind binary search.
+		
+		//so here we go.
+        
         int d=0;
         for(int i=0;i<nums1.length;i++)
         {
