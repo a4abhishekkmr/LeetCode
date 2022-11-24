@@ -8,14 +8,14 @@ class Solution {
         int mid=0;
         while(lo<hi)
         {
-            mid=(hi+lo)/2;
-            if(nums[lo]<nums[hi]) return nums[lo];
-            if(nums[mid]>=nums[lo])
+            mid=lo+(hi-lo)/2;
+            
+            if(nums[mid]>nums[hi])
             {
-                lo=mid+1;
+                lo=mid+1;//iska mtlab smallest hmko right me milega
             }
             else
-                hi=mid;
+                hi=mid;//lo to mid me milega smallest
         }
         return nums[lo];
     }
