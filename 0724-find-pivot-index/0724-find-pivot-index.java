@@ -17,15 +17,7 @@ class Solution {
         {
             right[i]=right[i+1]+nums[i+1];
         }
-//         for(int i=0;i<nums.length;i++)
-//         {System.out.print(left[i]+" ");
-          
-//         }
-//         System.out.println();
-//         for(int i=0;i<nums.length;i++)
-//         {System.out.print(right[i]+" ");
-          
-//         }
+
         for(int i=0;i<nums.length;i++)
         {
             if(left[i]==right[i]) return i;
