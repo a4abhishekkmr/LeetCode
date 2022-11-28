@@ -34,10 +34,10 @@ class Solution {
                 one.add(key);
             
         }
-        Set<Integer> treeSet = new TreeSet<Integer>(hs);
-        for (int x: treeSet) {
+        //Set<Integer> treeSet = new TreeSet<Integer>(hs);
+        for (int x: hs) {
             zero.add(x);}
-        
+        Collections.sort(zero);
         Collections.sort(one);
         
         ans.add(zero);
