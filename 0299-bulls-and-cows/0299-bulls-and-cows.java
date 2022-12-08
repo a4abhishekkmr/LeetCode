@@ -13,33 +13,59 @@ class Solution {
         ..so i need to take HAshmap and then i can proceed with it.
         
         */
-        HashMap<Character,Integer> hm=new HashMap<>();
+//         HashMap<Character,Integer> hm=new HashMap<>();
         
-        int x=0,y=0,n=secret.length();
+//         int x=0,y=0,n=secret.length();
         
-        ArrayList<Integer> skip=new ArrayList<>();
+//         ArrayList<Integer> skip=new ArrayList<>();
+//         for(int i=0;i<n;i++)
+//         {
+//             char ch=secret.charAt(i);
+//             char gu=guess.charAt(i);
+//             if(ch==gu) {x++; skip.add(i);}
+//             else
+//                 hm.put(ch,hm.getOrDefault(ch,0)+1);//map.put(c, map.getOrDefault(c, 0) + 1);
+//         }
+//         for(int i=0;i<n;i++)
+//         {
+//             if(!skip.contains(i)){
+//             char ch=guess.charAt(i);
+//             if(hm.containsKey(ch))
+//             {y++;
+//              if(hm.get(ch)==1)
+//                  hm.remove(ch);
+//              else
+//                  hm.put(ch,hm.get(ch)-1);
+//             }
+//             }//if skip
+//         }
+//         //return Integer.toString(x)+"A"+Integer.toString(y)+"B";
+//         return new StringBuilder().append(x).append('A').append(y).append('B').toString();
+        
+        //let's optimize the space
+        
+        int sec[]=new int[10];
+        int gues[]=new int[10];
+        
+         int x=0,y=0,n=secret.length();
+        
         for(int i=0;i<n;i++)
         {
             char ch=secret.charAt(i);
             char gu=guess.charAt(i);
-            if(ch==gu) {x++; skip.add(i);}
+            if(ch==gu) {x++;}
             else
-                hm.put(ch,hm.getOrDefault(ch,0)+1);//map.put(c, map.getOrDefault(c, 0) + 1);
-        }
-        for(int i=0;i<n;i++)
-        {
-            if(!skip.contains(i)){
-            char ch=guess.charAt(i);
-            if(hm.containsKey(ch))
-            {y++;
-             if(hm.get(ch)==1)
-                 hm.remove(ch);
-             else
-                 hm.put(ch,hm.get(ch)-1);
+                {
+                sec[ch-'0']++;
+                gues[gu-'0']++;
             }
-            }//if skip
         }
-        //return Integer.toString(x)+"A"+Integer.toString(y)+"B";
+        for(int i=0;i<10;i++)
+            y+=Math.min(sec[i],gues[i]);
+        
         return new StringBuilder().append(x).append('A').append(y).append('B').toString();
-    }
+     }
 }
+// Complexity
+// Time complexity:$$O(n) + O(10)$$
+// Space complexity: $$O(20)$$
