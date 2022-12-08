@@ -39,6 +39,7 @@ class Solution {
             }
             }//if skip
         }
-        return Integer.toString(x)+"A"+Integer.toString(y)+"B";
+        //return Integer.toString(x)+"A"+Integer.toString(y)+"B";
+        return new StringBuilder().append(x).append('A').append(y).append('B').toString();
     }
 }
