@@ -29,6 +29,6 @@ class Solution {
         
         max=Math.max(max,leftsum+rightsum+root.val);
         
-        return Math.max(leftsum+root.val,rightsum+root.val);
+        return Math.max(leftsum,rightsum)+root.val;
     }
 }
