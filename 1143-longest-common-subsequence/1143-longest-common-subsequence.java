@@ -7,16 +7,14 @@ class Solution {
         {
             for(int j=1;j<=n2;j++)
             {
-                
-                dp[i][j]=Math.max(dp[i - 1][j], dp[i][j - 1]);
                 char ch=text1.charAt(i-1);
                 char sh=text2.charAt(j-1);
                 
                 if(ch==sh) dp[i][j]=dp[i-1][j-1]+1;
-                    
+                 else
+                     dp[i][j]=Math.max(dp[i - 1][j], dp[i][j - 1]);
             }
         }
-        
         return dp[n1][n2];
     }
 }
