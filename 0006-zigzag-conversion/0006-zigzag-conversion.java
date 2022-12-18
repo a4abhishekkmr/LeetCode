@@ -64,3 +64,73 @@ class Solution {
         
     }
 }
+
+/*
+//other answers will be
+//class Solution {
+    public String convert(String s, int numRows) {
+        //we can use Char Array
+        //char str[s.length()];
+        StringBuilder str = new StringBuilder();
+        numRows--;
+        //if given row is 1 then return string
+        if(numRows==0) return s;
+        // i use for current row
+        // j use for current element of current row
+        for(int i=0, j=i , len=s.length(); i<=numRows;){
+            //lower operation
+            if(i!=numRows && j<len){
+                str.append(s.charAt(j));
+                j=j+(numRows-i)*2;
+            }
+            //upper operation
+            if(i!=0 && j<len){
+                str.append(s.charAt(j));
+                j=j+i*2;
+            }
+            //change row and element position
+            if(j>=len){
+                i++;
+                j=i;
+            }
+        }
+        return str.toString();
+    }
+}
+
+
+class Solution {
+    public String convert(String s, int numRows) {
+        if(numRows == 1) return s;
+        StringBuilder[] arr = new StringBuilder[numRows];
+        for(int i = 0 ; i < arr.length ; i ++) {
+            arr[i] = new StringBuilder("");
+        }
+        boolean f = true;
+        int i = 0; int j = 0;
+        while(i < s.length()){
+            char ch = s.charAt(i);
+
+            arr[j].append(ch);
+
+            if(f){
+                j++;
+            }else{
+                j--;
+            }
+            if(j == numRows){
+                j = numRows - 2;
+                f = false;
+            }else if(j ==-1){
+                j+= 2;
+                f= true;
+            }
+            i++;
+        }
+        for(i = 1 ; i < arr.length ; i ++){
+            arr[0].append(arr[i]);
+        }
+        return arr[0].toString();
+    }
+}
+*/
