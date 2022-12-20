@@ -6,29 +6,46 @@ class Solution {
         //lately check all the nodes if not vis then return false;
         
         
-        boolean vis[]=new boolean[rooms.size()];
-        vis[0]=true;
+//         boolean vis[]=new boolean[rooms.size()];
+//         vis[0]=true;
         
-        //dfs
-        Stack<Integer> st=new Stack<>();
-        st.push(0);//first element
+//         //dfs
+//         Stack<Integer> st=new Stack<>();
+//         st.push(0);//first element
         
-        while(!st.isEmpty())
-        {
-            int curr=st.pop();
-            for(int x:rooms.get(curr))
-            {
-                if(!vis[x])
-                {
-                    vis[x]=true;
-                    st.push(x);
-                }
-            }
-        }
+//         while(!st.isEmpty())
+//         {
+//             int curr=st.pop();
+//             for(int x:rooms.get(curr))
+//             {
+//                 if(!vis[x])
+//                 {
+//                     vis[x]=true;
+//                     st.push(x);
+//                 }
+//             }
+//         }
         //all set
         
+        Queue<List<Integer>> q = new LinkedList();
+        q.offer(rooms.get(0));
+        int len = rooms.size();
+        boolean[] visited = new boolean[len];
+        visited[0] = true;
+        while(!q.isEmpty())
+        {
+            List<Integer> current = q.poll();
+            for(int n: current)
+            {
+                if(!visited[n])
+                {
+                    visited[n] = true;
+                    q.offer(rooms.get(n));
+                }
+            } 
+        }
         //now check for all
-        for(boolean c:vis)
+        for(boolean c:visited)
             if(!c) return false;
         
         return true;
