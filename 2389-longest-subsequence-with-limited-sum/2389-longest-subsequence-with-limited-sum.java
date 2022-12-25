@@ -10,12 +10,17 @@ class Solution {
         so to deal with this solution which is similar to knapsack where i need max length of nums which we
         will pick as subsequence.
         */
+        //but no need of dp here either we can go with greedy approach which is sort and count nums
+        
         //Approach:- 
         //we will solve for each queries  independently and
         //store it in answer
         //while for each query we need to choose the subsequence as long as possible.
         //for this we need to pick smaller elements first to reach with the solution
-        
+        /*
+        1.Sort the nums
+        2.for every query pass the query along with the nums and check if sorted nums<=query then add length
+        3. finally after the loop pass the count of length
         int n=nums.length;
         int m=queries.length;
         int ans[]=new int[m];
@@ -44,4 +49,40 @@ class Solution {
         }
         return count;
     }
+    */
+        
+        //2nd approach
+        //we will take benefit of PrefixSum and then with the help of binary search we can find the length
+        //sort then do prefix sum
+        //then finally do binary search<=query[i];
+       int n=nums.length;
+        int m=queries.length;
+        int ans[]=new int[m];
+        Arrays.sort(nums);
+        
+        for(int i=1;i<n;i++)
+            nums[i]+=nums[i-1];
+        for(int i=0;i<m;i++)
+        {
+            ans[i]=binarySearch(nums,queries[i]);
+        }
+        return ans; 
+        
+    }
+    private int binarySearch(int[]nums,int sum)
+    {
+        int lo=0,hi=nums.length-1;
+        while(lo<hi)
+        {
+            int mid=(lo+hi)/2;
+            if(nums[mid]==sum)
+                return mid+1;
+            if(nums[mid]<sum)
+                lo=mid+1;
+            else
+                hi=mid-1;
+        }
+        return nums[lo]>sum?lo:lo+1;
+    }
 }
+
