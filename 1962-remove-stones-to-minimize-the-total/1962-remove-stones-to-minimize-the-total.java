@@ -33,3 +33,10 @@ class Solution {
         return sum;
     }
 }
+//Time complexity: O(n + k \cdot \log{}n)O(n+k⋅logn)
+
+//An array can be converted to a heap in linear time (O(n)O(n)) using a method like Python's heapq.heapify(). After converting the input to a heap, we perform k heap operations. Each heap operation costs O(\log{}n)O(logn), which gives us a time complexity of O(n + k \cdot \log{}n)O(n+k⋅logn).
+
+//Space complexity: O(n)O(n)
+
+//The heap's length is equal to nn, which is all the extra space we use
