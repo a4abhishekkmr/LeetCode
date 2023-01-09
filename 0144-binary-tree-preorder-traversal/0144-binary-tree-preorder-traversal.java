@@ -25,3 +25,4 @@ class Solution {
         return al;
     }
 }
+//TC- O(n) and space- O(n)
