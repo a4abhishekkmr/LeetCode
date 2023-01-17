@@ -62,38 +62,57 @@
 }
 */
 
+// class Solution {
+//     public int closetTarget(String[] words, String target, int startIndex) {
+        
+//         //ok so in this ques i am going with a aux space array of boolean where ill be searching for the
+//         //same word if found then mark true
+//         //now from this resultant array i will calculate the nearest point from the start index
+        
+//         int n=words.length;
+        
+//         boolean arr[]=new boolean[n];
+        
+//         for(int i=0;i<n;i++)
+//         {
+//             if(words[i].equals(target))
+//                 arr[i]=true;
+//         }
+//         //resultant ready
+        
+//         //now need to calculate
+//         int pos=startIndex;
+//         int min=n;
+//         for(int i=0;i<n;i++)
+//         {
+//             if(arr[i])
+//             {
+//                 int r=Math.abs(pos-i);
+//                 int l=Math.abs(n-r);
+//                 System.out.println(l+"   "+r);
+//                 min=Math.min(Math.min(r,l),min);
+//             }
+//         }
+//         if(min==n) return -1;
+//         else return min;
+//     }
+// }
+
 class Solution {
     public int closetTarget(String[] words, String target, int startIndex) {
-        
-        //ok so in this ques i am going with a aux space array of boolean where ill be searching for the
-        //same word if found then mark true
-        //now from this resultant array i will calculate the nearest point from the start index
-        
-        int n=words.length;
-        
-        boolean arr[]=new boolean[n];
-        
-        for(int i=0;i<n;i++)
-        {
-            if(words[i].equals(target))
-                arr[i]=true;
-        }
-        //resultant ready
-        
-        //now need to calculate
-        int pos=startIndex;
-        int min=n;
-        for(int i=0;i<n;i++)
-        {
-            if(arr[i])
-            {
-                int r=Math.abs(pos-i);
-                int l=Math.abs(n-r);
-                System.out.println(l+"   "+r);
-                min=Math.min(Math.min(r,l),min);
+        int globalMin =  101;
+        int n = words.length;
+        for(int i = 0;i<words.length;i++){
+            String word  = words[i];
+            if(word.equals(target)) {
+               int lDistance =  Math.abs(i - startIndex);
+               int rDistance  = Math.abs(n - lDistance);
+               int localmin = Math.min(lDistance,rDistance);
+               globalMin = Math.min(localmin,globalMin);
             }
         }
-        if(min==n) return -1;
-        else return min;
+
+        return globalMin==101?-1:globalMin;
+        
     }
 }
