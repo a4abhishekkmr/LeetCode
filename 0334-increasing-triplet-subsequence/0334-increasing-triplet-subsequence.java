@@ -23,3 +23,8 @@ class Solution {
         return false;
     }
 }
+//Another good solution 
+//https://leetcode.com/problems/increasing-triplet-subsequence/discuss/2688485/Two-Approaches-oror-Easy-To-Understand-oror-C%2B%2B-Code
+
+//image to understand is in posted comment
+//https://assets.leetcode.com/users/images/cb59fde1-9ceb-449a-a9fb-9b518cc3285a_1665555946.0283813.png
