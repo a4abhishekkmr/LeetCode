@@ -39,6 +39,6 @@ O(1)
         int right=height(root.right,height+1);
         
         if(Math.abs(left-right)>1) return -1;
-        return Math.max(left,right);
+        return Math.max(left,right);//true
     }
 }
