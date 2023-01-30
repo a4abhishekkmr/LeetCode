@@ -21,8 +21,8 @@
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         //Abhishek
-        ListNode dummy = new ListNode(),
-						result = dummy;
+        ListNode l3 = new ListNode();
+        ListNode head = l3;
         
         int carry=0;
         
@@ -52,17 +52,17 @@ class Solution {
 		// Thus, our result would be accurate for all cases - whether sum is greater than 10 or not.
             //sum+=carry;
             
-            dummy.next = new ListNode(sum%10);
+            l3.next = new ListNode(sum%10);//addig directly
             carry=sum/10;
             //temp.next=node;
-            dummy=dummy.next;
+            l3=l3.next;
         }
         
         //if carry is remaining then we need to add it as a next Node
         if(carry==1)
-        {dummy.next = new ListNode(1);
-            dummy=dummy.next;}
+        {l3.next = new ListNode(1);
+            l3=l3.next;}
         
-        return result.next;
+        return head.next;
     }
 }
