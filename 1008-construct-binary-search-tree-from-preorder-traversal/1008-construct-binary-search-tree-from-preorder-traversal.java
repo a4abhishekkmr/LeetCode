@@ -36,4 +36,5 @@ class Solution {
         return root;
     }
     
-}
+}//sc-O)(h) height as max stack can be of h height
+///tc-O(N*N) O(N) for iteration and O(h) for times to add
