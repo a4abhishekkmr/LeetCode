@@ -14,6 +14,7 @@
  * }
  */
 class Solution {
+    //iterate put and then sort
     public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
         ArrayList<Integer> al=new ArrayList<>();
         
@@ -34,3 +35,6 @@ class Solution {
         }
     }
 }
+
+//tc-O(Nlogn)for sorting +O(N)+O(N) for traversals so finally O(nlogn)
+//space-O(H) for traversals and aux space of al is taken.
