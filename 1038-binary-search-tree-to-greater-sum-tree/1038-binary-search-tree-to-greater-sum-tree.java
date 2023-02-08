@@ -33,4 +33,4 @@ class Solution {
         
         return root;
     }
-}
+}//tc-O(N) and space-O(h)
